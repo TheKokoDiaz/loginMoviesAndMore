@@ -11,6 +11,7 @@
 *{
     box-sizing: border-box;
     transition-duration: 450ms;
+    font-family: 'Raleway-Regular';
 }
 
 html, body{
@@ -28,7 +29,7 @@ html{
     background-color: brown;
     background-size: 50%;
 
-    overflow: hidden;
+    /* overflow: hidden; */
     background-size: 80% 80%;
     animation: backgroundMovement 50s linear infinite;
 }
@@ -51,7 +52,6 @@ html{
     border: 0.1rem solid white;
     /* border-image: linear-gradient(180deg, white, rgb(220, 0, 0), rgb(80, 0, 0)) 1; */
 
-    font-family: 'Raleway-Regular';
     
     display: flex;
     flex-direction: column;
@@ -80,7 +80,6 @@ html{
     border-radius: 8px;
     border: 0.1rem solid whitesmoke;
 
-    font-family: 'Raleway-Regular';
     font-size: 1rem;
 }
 
@@ -113,7 +112,6 @@ html{
     background-color: rgba(0, 0, 0, 0);
     color: white;
 
-    font-family: 'Raleway-Regular';
     font-size: 1rem;
     font-weight: bold;
 }

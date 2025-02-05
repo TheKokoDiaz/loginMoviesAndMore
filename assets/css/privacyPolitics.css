@@ -1,0 +1,50 @@
+html, body{
+    height: auto;
+    margin: 0;
+}
+
+.boxText{
+    width: 60%;
+    height: 100%;
+    background-color: white;
+
+    padding: 2rem 5rem;
+}
+
+.boxTextTitle{
+    border-bottom: 0.2rem solid rgb(150, 0, 0);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    font-family: 'Raleway-Black';
+    font-size: 2.8rem;
+    color: rgb(150, 0, 0);
+}
+
+.boxTextBody{
+    text-align: justify;
+}
+
+.btnReturn{
+    width: 3%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+
+    position: fixed;
+    left: 1%;
+    top: 2%;
+
+    color: white;
+    font-family: 'Raleway-Black';
+    user-select: none;
+}
+
+.btnReturn:hover{
+    width: 4%;
+    transform: rotate(360deg);
+    cursor: pointer;
+}
+
+.btnReturn:active{
+    background-color: rgba(0, 0, 0, 50%);
+}
