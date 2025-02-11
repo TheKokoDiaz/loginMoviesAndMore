@@ -21,20 +21,22 @@
     <link rel="shortcut icon" href="assets/icons/popcorns_logo.png">
 </head>
 <body>
-    <form action="POST" class="loginBox">
+    <form class="loginBox">
         <div class="loginTitle">Inicio de Sesión</div>
+
+        <div id="loginWarnings"></div>
 
         <div class="loginMarginTxt">
             <img src="assets/icons/user.png" alt="" class="loginIcon">
-            <input maxlength="50" class="loginBoxTxt" type="text" name="" id="" placeholder="Correo Electrónico">
+            <input maxlength="50" class="loginBoxTxt" type="text" name="" id="username" placeholder="Correo Electrónico">
         </div>
 
         <div class="loginMarginTxt">
             <img src="assets/icons/padlock.png" alt="" class="loginIcon">
-            <input maxlength="50" class="loginBoxTxt" type="password" name="" id="" placeholder="Contraseña">
+            <input maxlength="50" class="loginBoxTxt" type="password" name="" id="password" placeholder="Contraseña">
         </div>
 
-        <input class="loginBoxButton" type="button" value="Iniciar Sesión">
+        <input class="loginBoxButton" onclick="login()" type="button" value="Iniciar Sesión">
 
         <div class="loginLine"></div>
 
@@ -44,5 +46,7 @@
             <a href="conditions.html" class="loginBoxLink">Términos y Condiciones</a>
         </div>
     </form>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
