@@ -24,7 +24,7 @@ html, body{
 }
 
 html{
-    background-image: url("/assets/images/cinema1.jpg");
+    background-image: url("../images/cinema1.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
