@@ -6,19 +6,20 @@ html, body{
 .boxText{
     width: 60%;
     height: 100%;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 60%);
+    color: white;
 
     padding: 2rem 5rem;
 }
 
 .boxTextTitle{
-    border-bottom: 0.2rem solid rgb(150, 0, 0);
+    border-bottom: 0.2rem solid rgb(200, 0, 0);
     padding-bottom: 1rem;
     margin-bottom: 1rem;
 
     font-family: 'Raleway-Black';
     font-size: 2.8rem;
-    color: rgb(150, 0, 0);
+    color: rgb(200, 0, 0);
 }
 
 .boxTextBody{
@@ -26,7 +27,7 @@ html, body{
 }
 
 .btnReturn{
-    width: 3%;
+    width: 3rem;
     aspect-ratio: 1/1;
     border-radius: 50%;
 
@@ -40,11 +41,29 @@ html, body{
 }
 
 .btnReturn:hover{
-    width: 4%;
+    width: 4rem;
     transform: rotate(360deg);
     cursor: pointer;
 }
 
 .btnReturn:active{
     background-color: rgba(0, 0, 0, 50%);
+}
+
+@media screen and (max-width: 941px){
+    .boxText{
+        width: 90%;
+        height: 100%;
+    
+        padding: 2rem 2rem;
+    }
+
+    .btnReturn{
+        width: 2.5rem;
+        top: 1%;
+    }
+
+    .btnReturn:hover{
+        width: 2.6rem;
+    }
 }

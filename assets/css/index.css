@@ -1,0 +1,119 @@
+.loginBox{
+    background: linear-gradient(180deg, rgb(80, 0, 0), rgb(220, 0, 0));
+    width: 40rem;
+    height: 25rem;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 0.1rem solid white;
+    margin-bottom: 5rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 1rem;
+}
+
+.loginTitle{
+    font-family: 'Raleway-Black';
+    font-size: 1.8rem;
+    color: white;
+}
+
+.loginMarginTxt{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBoxTxt{
+    width: 85%;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    border: 0.1rem solid whitesmoke;
+
+    font-size: 1rem;
+}
+
+.loginBoxTxt:hover{
+    border: 0.15rem solid rgb(255, 100, 100);
+}
+
+.loginBoxTxt:focus{
+    outline: none;
+    width: 90%;
+    border: 0.2rem solid rgb(250, 0, 0);
+}
+
+.loginMarginTxt .loginIcon{
+    height: 1.8rem;
+    margin-right: 3%;
+    user-select: none;
+}
+
+.loginLine{
+    width: 98%;
+    border: 1px solid white;
+}
+
+.loginBoxButton{
+    width: 95%;
+    padding: 0.5rem 0.2rem;
+    border-radius: 16px;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.loginBoxButton:hover{
+    width: 95%;
+    padding: 0.5rem 0.2rem;
+    background-color: rgba(255, 255, 255, 20%);
+    cursor: pointer;
+}
+
+.loginBoxButton:active{
+    width: 90%;
+    padding: 0.4rem 0.15rem;
+    background-color: rgba(0, 0, 0, 50%);
+}
+
+.loginBoxLink{
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+}
+
+.loginBoxLink:hover{
+    text-decoration: underline;
+}
+
+.loginBoxLink:visited{
+    color: rgb(250, 180, 100);
+}
+
+.linksBox{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.linksBox a{
+    text-align: center;
+}
+
+@media screen and (max-width: 941px){
+    .loginBox{
+        width: 90%;
+        height: 25rem;
+        padding: 1.5rem;
+    }
+}
