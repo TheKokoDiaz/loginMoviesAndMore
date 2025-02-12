@@ -75,7 +75,7 @@ function login(){
         switch(redFlag){
             case 0:
                 hideWarnings();
-                window.location.href = "../../sessionStarted.html";
+                window.location.href = "sessionStarted.html";
                 break;
 
             case 1:

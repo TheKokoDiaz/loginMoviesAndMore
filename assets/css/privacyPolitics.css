@@ -49,6 +49,7 @@ html, body{
     color: white;
     font-family: 'Raleway-Black';
     user-select: none;
+    -webkit-user-drag: none;
 }
 
 .btnReturn:hover{
