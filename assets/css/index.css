@@ -1,7 +1,7 @@
 .loginBox{
     background: linear-gradient(180deg, rgb(80, 0, 0), rgb(220, 0, 0));
     width: 40rem;
-    height: 25rem;
+    height: auto;
     padding: 1.5rem;
     border-radius: 16px;
     border: 0.1rem solid white;
@@ -79,6 +79,56 @@
     height: 1.8rem;
     margin-right: 3%;
     user-select: none;
+}
+
+#loginRememberBox{
+    padding: 0.1rem 1.25rem;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#loginRememberBox:hover{
+    background-color: rgba(0, 0, 0, 20%);
+}
+
+#loginCheckRemember{
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.1rem solid white;
+    border-radius: 50%;
+    
+    appearance: none;
+    cursor: pointer;
+}
+
+#loginCheckRemember::before{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+
+    content: '';
+    display: block;
+    color: white;
+    text-align: center;
+}
+
+#loginCheckRemember:checked::before{
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 0.1rem solid white;
+    margin: -0.09rem 0 0 -0.09rem;
+
+    content: '\2713';
+    font-weight: bold;
 }
 
 .loginLine{

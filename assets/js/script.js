@@ -1,15 +1,21 @@
 //! Variables
 let redFlag = 0;
+let activeUser;
+let activeEmail;
+let rememberedMe;
+let rememberedEmail = localStorage.getItem('rememberedEmail');
 
 // Accounts to make proofs
 let accounts = [
     {
-    username: "admin",
-    password: "1234567890"
+        user: "Administrador",
+        username: "admin",
+        password: "1234567890"
     },
     {
-    username: "koko@gmail.com",
-    password: "Pikachu2025"
+        user: "El Koko Díaz",
+        username: "koko@gmail.com",
+        password: "Pikachu2025"
     }
 ];
 
@@ -17,6 +23,7 @@ let accounts = [
 const txtUsername = document.querySelector("#username");
 const txtPassword = document.querySelector("#password");
 const lblWarnings = document.querySelector("#loginWarnings");
+const chkRemember = document.querySelector("#loginCheckRemember");
 
 // Functions
 function showWarnings(){
@@ -56,6 +63,23 @@ function desactivateTextBoxWarning(element){
     }
 }
 
+function rememberPreferences(){
+    if(rememberedEmail != null || rememberedEmail != undefined){
+        chkRemember.checked = 'true';
+    }
+}
+
+function rememberUser(){
+    if(chkRemember.checked){
+        txtUsername.value = rememberedEmail;
+    }
+}
+
+function startSession(user, username){
+    sessionStorage.setItem('activeUser', user);
+    sessionStorage.setItem('activeEmail', username);
+}
+
 function login(){
     hideWarnings();
 
@@ -65,6 +89,18 @@ function login(){
             if(txtUsername.value == accounts[i].username){
                 if(txtPassword.value == accounts[i].password){
                     redFlag = 0;
+                    
+                    hideWarnings();
+                    startSession(accounts[i].user, accounts[i].username);
+
+                    if(chkRemember.checked){
+                        localStorage.setItem('rememberedEmail', accounts[i].username)
+                    } else {
+                        localStorage.removeItem('rememberedEmail');
+                    }
+                    
+                    window.location.href = "sessionStarted.html";
+                    break;
                 } else {
                     redFlag = 2;
                 }
@@ -73,11 +109,6 @@ function login(){
         }
     
         switch(redFlag){
-            case 0:
-                hideWarnings();
-                window.location.href = "sessionStarted.html";
-                break;
-
             case 1:
                 activateTextBoxWarning("username");
                 writeError("El correo electrónico no existe");
@@ -99,3 +130,6 @@ function login(){
         }
     }
 }
+
+rememberPreferences();
+rememberUser();

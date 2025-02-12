@@ -6,7 +6,6 @@ html{
     background: linear-gradient(180deg, rgb(80, 0, 0), rgb(220, 0, 0));
     width: 40rem;
     height: 120%;
-    padding: 1.5rem;
     border-radius: 16px;
     border: 0.1rem solid white;
     
@@ -15,11 +14,11 @@ html{
     align-items: center;
     justify-content: center;
     
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .logedImgBox{
-    width: 60%;
+    width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
@@ -49,11 +48,24 @@ html{
     100%{margin-bottom: 5rem;}
 }
 
-.logedTitle{
+.logedTitle, .logedWelcome{
     font-family: 'Raleway-Black';
-    font-size: 2.8rem;
     color: white;
     text-align: center;
+}
+
+.logedTitle, .logedWelcome{
+    padding: 0 1.5rem;
+    font-size: 2.8rem;
+}
+
+.logedWelcome{
+    width: 100%;
+    padding: 1rem;
+
+    font-size: 2.4rem;
+    background-color: white;
+    color: rgb(220, 0, 0);
 }
 
 @media screen and (max-width: 780px){

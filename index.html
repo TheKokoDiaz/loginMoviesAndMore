@@ -28,19 +28,25 @@
 
         <div class="loginMarginTxt">
             <img src="assets/icons/user.png" alt="" class="loginIcon">
-            <input maxlength="50" class="loginBoxTxt" type="text" name="" id="username" placeholder="Correo Electrónico">
+            <input maxlength="50" class="loginBoxTxt" type="text" name="" id="username" placeholder="Correo Electrónico" autocomplete="email">
         </div>
 
         <div class="loginMarginTxt">
             <img src="assets/icons/padlock.png" alt="" class="loginIcon">
-            <input maxlength="50" class="loginBoxTxt" type="password" name="" id="password" placeholder="Contraseña">
+            <input maxlength="50" class="loginBoxTxt" type="password" name="" id="password" placeholder="Contraseña" autocomplete="current-password">
         </div>
-
+        
+        <label for="loginCheckRemember" id="loginRememberBox">
+            <input type="checkbox" name="" id="loginCheckRemember">
+            Recordar Correo Electrónico
+        </label>
+        
         <input class="loginBoxButton" onclick="login()" type="button" value="Iniciar Sesión">
 
         <div class="loginLine"></div>
 
-        <input  class="loginBoxButton" type="button" value="Crear Cuenta Nueva">
+        <input class="loginBoxButton" type="button" value="Crear Cuenta Nueva">
+
         <div class="linksBox">
             <a href="privacyPolitics.html" class="loginBoxLink">Políticas de Privacidad</a>
             <a href="conditions.html" class="loginBoxLink">Términos y Condiciones</a>
