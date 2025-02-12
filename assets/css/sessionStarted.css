@@ -1,0 +1,63 @@
+html{
+    overflow: hidden;
+}
+
+.logedBox{
+    background: linear-gradient(180deg, rgb(80, 0, 0), rgb(220, 0, 0));
+    width: 40rem;
+    height: 120%;
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 0.1rem solid white;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 1rem;
+}
+
+.logedImgBox{
+    width: 60%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0.8rem solid white;
+    background-color: rgba(0, 0, 0, 20%);
+}
+
+.logedImgBox:hover{
+    transform: rotate(-360deg);
+}
+
+.logedImg{
+    width: 80%;
+    transform: rotate(-20deg);
+    
+    animation: shake 600ms infinite;
+}
+
+@keyframes shake{
+    0%{margin-bottom: 5rem;}
+    50%{margin-bottom: 0rem;}
+    100%{margin-bottom: 5rem;}
+}
+
+.logedTitle{
+    font-family: 'Raleway-Black';
+    font-size: 2.8rem;
+    color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 780px){
+    .logedImgBox{
+        width: clamp(60%, 300px, 80%);
+    }
+}

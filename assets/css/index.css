@@ -70,6 +70,11 @@
     border: 0.2rem solid rgb(250, 0, 0);
 }
 
+.loginBoxTxt--Error{
+    background-color: rgb(220, 220, 150);
+    border: 0.15rem solid rgb(255, 100, 0);
+}
+
 .loginIcon{
     height: 1.8rem;
     margin-right: 3%;
