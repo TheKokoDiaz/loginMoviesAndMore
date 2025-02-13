@@ -5,20 +5,6 @@ let activeEmail;
 let rememberedMe;
 let rememberedEmail = localStorage.getItem('rememberedEmail');
 
-// Accounts to make proofs
-let accounts = [
-    {
-        user: "Administrador",
-        username: "admin",
-        password: "1234567890"
-    },
-    {
-        user: "El Koko Díaz",
-        username: "koko@gmail.com",
-        password: "Pikachu2025"
-    }
-];
-
 // HTML elements
 const txtUsername = document.querySelector("#username");
 const txtPassword = document.querySelector("#password");
@@ -80,6 +66,10 @@ function startSession(user, username){
     sessionStorage.setItem('activeEmail', username);
 }
 
+function travelTo(link){
+    window.location.href = link;
+}
+
 function login(){
     hideWarnings();
 
@@ -99,7 +89,7 @@ function login(){
                         localStorage.removeItem('rememberedEmail');
                     }
                     
-                    window.location.href = "sessionStarted.html";
+                    travelTo("sessionStarted.html");
                     break;
                 } else {
                     redFlag = 2;

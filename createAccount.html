@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - Movies & More</title>
+
+    <!-- * Stylesheets -->
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="assets/css/index.css" type="text/css" media="screen">
+    <link rel="shortcut icon" href="assets/icons/popcorns_logo.png">
+
+    <style>
+        .btnReturn{
+            width: 3rem;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+
+            position: fixed;
+            left: 1%;
+            top: 2%;
+
+            color: white;
+            font-family: 'Raleway-Black';
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .btnReturn:hover{
+            width: 4rem;
+            transform: rotate(360deg);
+            cursor: pointer;
+        }
+
+        .btnReturn:active{
+            background-color: rgba(0, 0, 0, 50%);
+        }
+        
+        @media screen and (max-width: 941px){
+            .btnReturn{
+                width: 2.5rem;
+                top: 1%;
+            }
+
+            .btnReturn:hover{
+                width: 2.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form class="loginBox">
+        <div class="loginTitle">Crear Cuenta Nueva</div>
+
+        <div id="loginWarnings"></div>
+
+        <div class="loginMarginTxt">
+            <img src="assets/icons/user.png" alt="" class="loginIcon">
+            <input maxlength="50" class="loginBoxTxt" type="text" name="" id="newUser" placeholder="Nombre de Usuario" autocomplete="name">
+        </div>
+
+        <div class="loginMarginTxt">
+            <img src="assets/icons/user.png" alt="" class="loginIcon">
+            <input maxlength="50" class="loginBoxTxt" type="text" name="" id="newEmail" placeholder="Correo Electrónico" autocomplete="email">
+        </div>
+
+        <div class="loginMarginTxt">
+            <img src="assets/icons/padlock.png" alt="" class="loginIcon">
+            <input maxlength="50" class="loginBoxTxt" type="password" name="" id="newPassword" placeholder="Contraseña" autocomplete="current-password">
+        </div>
+        
+        <div class="loginMarginTxt">
+            <img src="assets/icons/padlock.png" alt="" class="loginIcon">
+            <input maxlength="50" class="loginBoxTxt" type="password" name="" id="newPasswordConfirm" placeholder="Confirmar Contraseña" autocomplete="current-password">
+        </div>
+        
+        <input class="loginBoxButton" type="button" value="Crear" onclick="createAccount()">
+    </form>
+
+    <a href="index.html">
+        <img src="assets/icons/return.png" alt="" class="btnReturn">
+    </a>
+
+    <script src="assets/js/accounts.js"></script>
+    <script src="assets/js/createAccount.js"></script>
+</body>
+</html>
