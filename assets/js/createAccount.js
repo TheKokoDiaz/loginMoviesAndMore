@@ -3,7 +3,6 @@ let redFlag = 0;
 let newAccount = {}
 
 // HTML elements
-const txtNewUser = document.querySelector("#newUser");
 const txtNewEmail = document.querySelector("#newEmail");
 const txtNewPassword = document.querySelector("#newPassword");
 const txtNewPasswordConfirm = document.querySelector("#newPasswordConfirm");
@@ -28,11 +27,6 @@ function hideWarnings(){
 }
 
 function activateTextBoxWarning(element){
-    if(element == "user"){
-        txtNewUser.className = "loginBoxTxt loginBoxTxt--Error";
-        txtNewUser.focus();
-    }
-
     if(element == "email"){
         txtNewEmail.className = "loginBoxTxt loginBoxTxt--Error";
         txtNewEmail.focus();
@@ -56,9 +50,6 @@ function activateTextBoxWarning(element){
 }
 
 function desactivateTextBoxWarning(element){
-    if(element == "user"){
-        txtNewUser.className = "loginBoxTxt";
-    }
 
     if(element == "email"){
         txtNewEmail.className = "loginBoxTxt";
@@ -78,12 +69,6 @@ function createAccount(){
 
     do{
         // Avoid empty spaces
-        if(!txtNewUser.value){
-            activateTextBoxWarning("user");
-            writeError("Debe crear un Nombre de Usuario");
-            break;
-        }
-
         if(!txtNewEmail.value){
             activateTextBoxWarning("email");
             writeError("Falta un Correo Electronico");
@@ -102,39 +87,24 @@ function createAccount(){
             break;
         }
 
-        redFlag = 0;
-        for(i = 0; i < accounts.length; i++){
-            if(txtNewUser.value == accounts[i].user){
-                activateTextBoxWarning("user");
-                writeError("El usuario ya existe");
-                redFlag = 1;
-                break;
-            }
-            
-            if(txtNewEmail.value == accounts[i].username){
-                activateTextBoxWarning("email");
-                writeError("El correo se ha utilizado en otra cuenta");
-                redFlag = 1;
-                break;
-            }
-        }
-
-        if(redFlag == 1){ break; }
-
         if(txtNewPassword.value != txtNewPasswordConfirm.value){
             activateTextBoxWarning("confirmation");
             writeError("Las contraseñas no coinciden");
             break;
         }
 
-        newAccount = {
-            user: txtNewUser.value,
-            username: txtNewEmail.value,
-            password: txtNewPassword.value
-        }
+        //? Call Python
+        let username = txtNewEmail.value;
+        let password = txtNewPassword.value;
 
-        accounts.push(newAccount);
-        localStorage.setItem('accountsDB', JSON.stringify(accounts));
+        fetch("http://127.0.0.1:5000/registro", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => alert(data.mensaje || data.error))
+        .catch(error => console.error("Error:", error));
 
         window.location.href = "index.html";
         break;  // Security Break, avoid loops

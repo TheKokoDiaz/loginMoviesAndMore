@@ -73,53 +73,50 @@ function travelTo(link){
 function login(){
     hideWarnings();
 
-    if(txtUsername.value && txtPassword.value){
-        redFlag = 1;
-        for(i= 0; i < accounts.length; i++){
-            if(txtUsername.value == accounts[i].username){
-                if(txtPassword.value == accounts[i].password){
-                    redFlag = 0;
-                    
-                    hideWarnings();
-                    startSession(accounts[i].user, accounts[i].username);
-
-                    if(chkRemember.checked){
-                        localStorage.setItem('rememberedEmail', accounts[i].username)
-                    } else {
-                        localStorage.removeItem('rememberedEmail');
-                    }
-                    
-                    travelTo("sessionStarted.html");
-                    break;
-                } else {
-                    redFlag = 2;
-                }
-                break;
-            }
-        }
-    
-        switch(redFlag){
-            case 1:
-                activateTextBoxWarning("username");
-                writeError("El correo electrónico no existe");
-                break;
-
-            case 2:
-                activateTextBoxWarning("password");
-                writeError("Contraseña incorrecta");
-                break;
-        }
-        
-    } else {
+    do{
         if(!txtUsername.value){
             activateTextBoxWarning("username");
             writeError("Ingrese su Correo Electronico");
-        } else if(!txtPassword.value){
+            break;
+        }
+        
+        if(!txtPassword.value){
             activateTextBoxWarning("password");
             writeError("Falta su contraseña");
+            break;
         }
-    }
-}
 
+        hideWarnings();
+        startSession(txtUsername.value, txtPassword.value);
+
+        if(chkRemember.checked){
+            localStorage.setItem('rememberedEmail', txtUsername.value);
+        } else {
+            localStorage.removeItem('rememberedEmail');
+        }
+        
+        //? Call Python
+        let username = txtUsername.value;
+        let password = txtPassword.value;
+
+        fetch("http://127.0.0.1:5000/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.mensaje || data.error) // Muestra alerta si hay error
+            } else {
+                setTimeout(() => {
+                    window.location.href = "sessionStarted.html"; // Cambia a otra ventana
+                }, 1000); // Espera 2 segundos antes de redirigir
+            }
+        })
+        break;
+    } while(true);
+} 
+    
 rememberPreferences();
 rememberUser();
