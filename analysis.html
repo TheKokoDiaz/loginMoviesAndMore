@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Datos</title>
+
+    <!-- * Stylesheets -->
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="assets/css/analysis.css">
+    <link rel="shortcut icon" href="assets/icons/popcorns_logo.png">
+</head>
+<body>
+    <div class="optionPanel">
+        <div class="option" onclick="toggleMenu()">
+            <img src="assets/icons/options.png" alt="" class="optionIcon">
+            <div class="optionTitle">Menú</div>
+        </div>
+        <div class="option" onclick="changeStats('users')">
+            <img src="assets/icons/user.png" alt="" class="optionIcon">
+            <div class="optionText">Usuarios</div>
+        </div>
+        <div class="option" onclick="changeStats('passwords')">
+            <img src="assets/icons/padlock.png" alt="" class="optionIcon">
+            <div class="optionText">Contraseñas</div>
+        </div>
+        <div class="option" onclick="changeStats('interactions')">
+            <img src="assets/icons/interactions.png" alt="" class="optionIcon">
+            <div class="optionText">Interacciones</div>
+        </div>
+    </div>
+
+    <div class="users info">
+        <div class="infoTitle">Usuarios</div>
+        <div class="infoBody">
+            Entre los nombres de usuario que podemos encontrar registrados en la página web, a pesar de que no pueden existir nombres de usuarios repetidos, encontramos que los siguientes suelen aparecer muchas veces con ligeras variaciones.
+            <ul>
+                <li>SonicFan</li>
+                <li>JuanCarlosBodoque</li>
+                <li>CalcetínConRombosMan</li>
+                <li>ElProGamer</li>
+                <li>Crítico123</li>
+                <li>JuanínJuanHarry</li>
+                <li>AnnaElsa</li>
+                <li>DisneyOlaf</li>
+                <li>María</li>
+                <li>DarthVader</li>
+                <li>MickeyMouse</li>
+            </ul>
+        </div>
+    </div>
+    <div class="users graphic">
+        <img src="assets/images/users.png" alt="" class="graphicImage">
+    </div>
+
+    <div class="password info">
+        <div class="infoTitle">Contraseñas</div>
+        <div class="infoBody">
+            Las contraseñas que más han sido ingresadas por los usuarios, al momento de crear sus cuentas han sido:
+            <ul>
+                <li>admin</li>
+                <li>12345678</li>
+                <li>contraseña</li>
+                <li>password</li>
+                <li>8754321</li>
+                <li>Flores123</li>
+                <li>gtasanandreas123</li>
+            </ul>
+
+            También hay otras contraseñas que se repiten menos, pero igual aparecen con cierta frecuencia:
+            <ul>
+                <li>user123</li>
+                <li>qwerty</li>
+                <li>za112233</li>
+                <li>123123123</li>
+            </ul>
+        </div>
+    </div>
+    <div class="password graphic">
+        <img src="assets/images/passwords.png" alt="" class="graphicImage">
+    </div>
+    
+    <div class="interactions info">
+        <div class="infoTitle">Interacciones</div>
+        <div class="infoBody">
+            De acuerdo a los datos recopilados con variables contadoras dentro del programa, podemos organizar las siguientes partes del programa conforme la cantidad de interacciones que tienen los usuarios con ellas.
+        </div>
+    </div>
+    <div class="interactions graphic">
+        <img src="assets/images/interactions.png" alt="" class="graphicImage graphicImage--interactions">
+    </div>
+
+    <script src="assets/js/analysis.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+*{
+    font-size: 1.1rem;
+}
+
+body{
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.optionPanel{
+    width: 15rem;
+    height: 100%;
+    border-right: 0.15rem solid white;
+    background: linear-gradient(0deg, rgb(180, 0, 0), rgb(120, 0, 0),rgb(80, 0, 0));
+    padding: 0.5rem;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.option{
+    width: 100%;
+    border-radius: 16px;
+    padding: 0.5rem;
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.option:hover{
+    background-color: rgba(255, 255, 255, 20%);
+}
+
+.option:active{
+    background-color: rgba(0, 0, 0, 20%);
+}
+
+.optionIcon{
+    width: 2rem;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.optionTitle, .optionText{
+    margin-left: 1rem;
+    color: white;
+}
+
+.optionTitle{
+    font-family: 'Raleway-Black';
+    font-size: 1.2rem;
+}
+
+.info{
+    width: 45%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 60%);
+    padding: 1rem 2rem;
+    overflow: auto;
+
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+}
+
+.infoTitle{
+    width: 100%;
+    border-bottom: 0.2rem solid white;
+
+    font-family: 'Raleway-Black';
+    font-size: 4rem;
+    color: white;
+}
+
+.infoBody{
+    text-align: justify;
+    color: white;
+}
+
+li{
+    padding-bottom: 0.3rem;
+}
+
+.graphic{
+    width: 55%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 60%);
+    padding: 1rem 2rem;
+    overflow: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graphicImage{
+    height: 95%;
+    -webkit-user-drag: none;
+}
+
+.graphicImage--interactions{
+    width: 95%;
+    height: auto;
+}
+
+.users{
+    display: flex;
+}
+
+.password{
+    display: none;
+}
+
+.interactions{
+    display: none;
+}
